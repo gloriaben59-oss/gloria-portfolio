@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gloria Wagura — Virtual Assistant &amp; Executive Support</title>
+<meta name="description" content="Gloria Wagura is a trained virtual assistant with a background in journalism and business communication. Executive support, email &amp; calendar management, content writing, and more — remote, worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FBF7F2;
+    --cream-2: #F5EDE5;
+    --burgundy: #5E1B2A;
+    --burgundy-dark: #2B1218;
+    --burgundy-hover: #7A2438;
+    --rose: #A8465A;
+    --rose-light: #D89AA8;
+    --ink: #2B2124;
+    --body: #4E4046;
+    --muted: #6B5A61;
+    --nav-link: #5A4A50;
+    --serif: 'Cormorant Garamond', serif;
+    --sans: 'Karla', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    font-family: var(--sans);
+    color: var(--ink);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding-left: 32px; padding-right: 32px; }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(251,247,242,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(94,27,42,0.12);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 18px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .nav-logo {
+    font-family: var(--serif); font-size: 22px; font-weight: 700;
+    color: var(--burgundy); text-decoration: none; letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+  .nav-links a {
+    color: var(--nav-link); text-decoration: none; font-size: 14px;
+    font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--burgundy); }
+  .nav-links a.nav-cta {
+    background: var(--burgundy); color: var(--cream); font-size: 13px;
+    font-weight: 600; letter-spacing: 0.06em; padding: 10px 20px;
+    border-radius: 999px; transition: background 0.2s ease;
+  }
+  .nav-links a.nav-cta:hover { background: var(--burgundy-hover); color: var(--cream); }
+
+  /* ============ HERO (dark) ============ */
+  .hero { background: var(--burgundy-dark); color: #F5EDE5; }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto; padding: 88px 32px 96px;
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; align-items: center;
+  }
+  .hero-kicker {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--rose-light); margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: clamp(36px, 5.5vw, 64px); line-height: 1.05;
+    font-weight: 600; margin: 0 0 24px; text-wrap: balance;
+  }
+  .hero-lede {
+    font-size: 18px; line-height: 1.65; margin: 0 0 36px;
+    max-width: 52ch; color: rgba(245,237,229,0.78);
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--cream); color: var(--burgundy); text-decoration: none;
+    font-size: 15px; font-weight: 700; padding: 15px 30px;
+    border-radius: 999px; letter-spacing: 0.02em; transition: opacity 0.2s ease;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-ghost {
+    color: #F5EDE5; text-decoration: none; font-size: 15px; font-weight: 600;
+    padding: 15px 26px; border: 1.5px solid rgba(245,237,229,0.4);
+    border-radius: 999px; transition: border-color 0.2s ease;
+  }
+  .btn-ghost:hover { border-color: #F5EDE5; }
+  .hero-meta {
+    margin-top: 40px; display: flex; gap: 28px; flex-wrap: wrap;
+    font-size: 14px; color: rgba(245,237,229,0.78);
+  }
+  .hero-photo-col { display: flex; justify-content: center; }
+  .hero-photo { position: relative; width: min(320px, 100%); }
+  .hero-photo::before {
+    content: ""; position: absolute; inset: 18px -18px -18px 18px;
+    border: 1.5px solid var(--rose-light);
+    border-radius: 200px 200px 24px 24px;
+  }
+  .hero-photo img {
+    position: relative; width: 100%; aspect-ratio: 4 / 5;
+    object-fit: cover; object-position: top;
+    border-radius: 200px 200px 24px 24px;
+  }
+
+  /* ============ SECTION PRIMITIVES ============ */
+  .section { max-width: 1100px; margin: 0 auto; padding: 96px 32px; }
+  .eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--rose); margin-bottom: 12px;
+  }
+  .section h2 {
+    font-family: var(--serif); font-size: clamp(30px, 4vw, 40px); font-weight: 600;
+    line-height: 1.1; margin: 0; color: var(--ink);
+  }
+  .side-grid { display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start; }
+
+  /* ============ ABOUT ============ */
+  .about-body {
+    font-size: 17px; line-height: 1.75; color: var(--body);
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .about-body p { margin: 0; }
+  .about-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .badge {
+    background: #F3E7E0; color: var(--burgundy); font-size: 13px;
+    font-weight: 600; padding: 8px 16px; border-radius: 999px;
+  }
+
+  /* ============ SERVICES ============ */
+  .services { background: var(--cream-2); }
+  .services-head { max-width: 560px; margin-bottom: 56px; }
+  .services-head h2 { margin-bottom: 16px; }
+  .services-head p { font-size: 16px; line-height: 1.6; color: var(--muted); margin: 0; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card {
+    background: var(--cream); border: 1px solid rgba(94,27,42,0.1);
+    border-radius: 16px; padding: 32px 28px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: all 0.2s ease;
+  }
+  .service-card:hover { border-color: rgba(94,27,42,0.35); transform: translateY(-3px); }
+  .service-num {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--burgundy);
+    color: var(--cream); display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 20px; font-weight: 600;
+  }
+  .service-card p { font-size: 15px; line-height: 1.6; color: var(--muted); margin: 0; }
+  .service-card h3 {
+    font-family: var(--serif); font-size: 24px; font-weight: 600;
+    margin: 8px 0 0; color: var(--ink);
+  }
+
+  /* ============ SKILLS ============ */
+  .skills-col { display: flex; flex-direction: column; gap: 36px; }
+  .skills-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--burgundy); margin-bottom: 16px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    border: 1px solid rgba(94,27,42,0.25); color: var(--body); font-size: 14px;
+    font-weight: 500; padding: 9px 18px; border-radius: 999px; background: #FFFFFF;
+  }
+  .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .tool-card {
+    background: #FFFFFF; border: 1px solid rgba(94,27,42,0.12);
+    border-radius: 12px; padding: 18px 20px;
+  }
+  .tool-name { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .tool-detail { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+
+  /* ============ EXPERIENCE ============ */
+  .experience { background: var(--burgundy-dark); color: var(--cream-2); }
+  .experience-head { max-width: 560px; margin-bottom: 56px; }
+  .experience .eyebrow { color: var(--rose-light); }
+  .experience h2 { color: var(--cream-2); }
+  .jobs { display: flex; flex-direction: column; }
+  .job {
+    display: grid; grid-template-columns: 200px 1fr; gap: 40px;
+    padding: 36px 0; border-top: 1px solid rgba(245,237,229,0.15);
+  }
+  .job-period { font-size: 14px; font-weight: 600; color: var(--rose-light); letter-spacing: 0.04em; }
+  .job-mode { font-size: 13px; color: rgba(245,237,229,0.55); margin-top: 4px; }
+  .job h3 {
+    font-family: var(--serif); font-size: 26px; font-weight: 600;
+    margin: 0 0 6px; color: var(--cream-2);
+  }
+  .job-org { font-size: 14px; color: rgba(245,237,229,0.65); margin-bottom: 14px; }
+  .job p { font-size: 15.5px; line-height: 1.7; color: rgba(245,237,229,0.85); margin: 0; max-width: 62ch; }
+
+  /* ============ EDUCATION ============ */
+  .education-head { max-width: 560px; margin-bottom: 48px; }
+  .education-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .edu-card {
+    border: 1px solid rgba(94,27,42,0.15); border-radius: 16px; padding: 28px;
+    background: #FFFFFF; display: flex; flex-direction: column; gap: 8px; height: 100%;
+  }
+  .edu-year {
+    font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--rose);
+  }
+  .edu-card h3 {
+    font-family: var(--serif); font-size: 23px; font-weight: 600; margin: 0;
+    color: var(--ink); line-height: 1.2; min-height: 2.4em;
+  }
+  .edu-school { font-size: 14px; color: var(--muted); min-height: 2.9em; }
+  .edu-card p { font-size: 14px; line-height: 1.6; color: var(--muted); margin: 6px 0 0; }
+
+  /* ============ REFEREES ============ */
+  .referees { background: var(--cream-2); }
+  .referees-inner { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
+  .referees h2 { font-size: 36px; }
+  .referees-col { display: flex; flex-direction: column; gap: 20px; }
+  .referee-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .referee-card {
+    background: var(--cream); border: 1px solid rgba(94,27,42,0.12);
+    border-radius: 14px; padding: 24px;
+  }
+  .referee-name { font-size: 16px; font-weight: 700; color: var(--ink); }
+  .referee-role { font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .referees-note { font-size: 13.5px; color: #8A7680; margin: 0; }
+
+  /* ============ CONTACT ============ */
+  .contact { background: var(--burgundy); color: var(--cream); }
+  .contact-inner { max-width: 800px; margin: 0 auto; padding: 104px 32px; text-align: center; }
+  .contact .eyebrow { color: var(--rose-light); margin-bottom: 16px; }
+  .contact h2 {
+    font-family: var(--serif); font-size: clamp(34px, 5.5vw, 52px); font-weight: 600;
+    line-height: 1.08; margin: 0 0 20px; color: var(--cream); text-wrap: balance;
+  }
+  .contact-lede {
+    font-size: 17px; line-height: 1.65; color: rgba(251,247,242,0.8);
+    margin: 0 auto 40px; max-width: 46ch;
+  }
+  .contact-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .contact-btn-solid {
+    background: var(--cream); color: var(--burgundy); text-decoration: none;
+    font-size: 15px; font-weight: 700; padding: 15px 28px;
+    border-radius: 999px; transition: opacity 0.2s ease;
+  }
+  .contact-btn-solid:hover { opacity: 0.9; }
+  .contact-btn-outline {
+    border: 1.5px solid rgba(251,247,242,0.5); color: var(--cream);
+    text-decoration: none; font-size: 15px; font-weight: 600;
+    padding: 15px 28px; border-radius: 999px; transition: border-color 0.2s ease;
+  }
+  .contact-btn-outline:hover { border-color: var(--cream); }
+  .footer {
+    margin-top: 72px; padding-top: 28px;
+    border-top: 1px solid rgba(251,247,242,0.18);
+    font-size: 13px; color: rgba(251,247,242,0.55);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  /* Tablet & below */
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 56px 32px 72px; }
+    .hero-photo-col { order: -1; }
+    .hero-photo { width: min(280px, 70vw); }
+    .side-grid { grid-template-columns: 1fr; gap: 28px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .education-grid { grid-template-columns: repeat(2, 1fr); }
+    .edu-card h3, .edu-school { min-height: 0; }
+    .job { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+    .section { padding: 72px 32px; }
+    .contact-inner { padding-top: 80px; padding-bottom: 80px; }
+  }
+  /* Phones */
+  @media (max-width: 640px) {
+    .container, .nav-inner, .hero-inner, .section, .referees-inner, .contact-inner {
+      padding-left: 20px; padding-right: 20px;
+    }
+    .nav-inner { flex-direction: column; gap: 10px; padding-top: 12px; padding-bottom: 12px; }
+    .nav-links { gap: 14px; justify-content: center; row-gap: 8px; }
+    .nav-links a { font-size: 13px; }
+    .nav-links a.nav-cta { padding: 8px 16px; }
+    .hero-inner { padding-top: 44px; padding-bottom: 56px; gap: 36px; }
+    .hero-meta { gap: 12px 24px; margin-top: 32px; }
+    .services-grid, .education-grid, .tools-grid, .referee-cards { grid-template-columns: 1fr; }
+    .section { padding-top: 60px; padding-bottom: 60px; }
+    .job p { font-size: 15px; }
+    .footer { justify-content: center; text-align: center; }
+  }
+  /* Small phones */
+  @media (max-width: 420px) {
+    .hero-ctas a, .contact-ctas a { width: 100%; text-align: center; box-sizing: border-box; }
+    .hero-photo { width: min(240px, 72vw); }
+    .service-card { padding: 26px 22px; }
+    .edu-card { padding: 22px; }
+    .footer { flex-direction: column; gap: 6px; }
+  }
+  /* Respect reduced-motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .service-card, .service-card:hover { transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Gloria Wagura</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-kicker">Virtual Assistant · Executive Support</div>
+      <h1>Hi, I'm Gloria. I keep busy people organized.</h1>
+      <p class="hero-lede">I'm a trained virtual assistant with a background in journalism and business communication. If your inbox is overflowing and your calendar is a mess, that's the part I actually enjoy fixing. You do the work only you can do; I'll handle the rest.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Work with me</a>
+        <a href="#services" class="btn-ghost">View services</a>
+      </div>
+      <div class="hero-meta">
+        <span>📍 Kenya · Remote worldwide</span>
+        <span>🕐 Flexible across time zones</span>
+      </div>
+    </div>
+    <div class="hero-photo-col">
+      <div class="hero-photo">
+        <img src="assets/gloria.jpeg" alt="Gloria Wagura">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="side-grid">
+    <div>
+      <div class="eyebrow">About</div>
+      <h2>A bit about me</h2>
+    </div>
+    <div class="about-body">
+      <p>I came to virtual assistance through writing. I studied journalism and international business communication, then trained as a virtual assistant with ALX. So beyond keeping your admin in order, I can research properly, write well, and handle correspondence your clients will actually want to read.</p>
+      <p>I've been working remotely since 2018, juggling multiple clients and projects, and I've never missed a deadline. I'm used to working on my own, keeping things confidential, and adjusting to whatever time zone my client is in.</p>
+      <div class="about-badges">
+        <span class="badge">100% deadline adherence</span>
+        <span class="badge">7+ years remote work</span>
+        <span class="badge">ALX-trained VA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section">
+    <div class="services-head">
+      <div class="eyebrow">Services</div>
+      <h2>How I can help</h2>
+      <p>Whether you need ongoing support or help with a one-off project, I start by learning how you like to work.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <p>Day-to-day support for executives and business owners. I keep track of your priorities and make sure nothing falls through the cracks.</p>
+        <h3>Executive &amp; Personal Assistance</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <p>I sort out your inbox, reply to what I can, schedule what needs scheduling, and guard your focus time.</p>
+        <h3>Email &amp; Calendar Management</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <p>Blog posts, articles, and business copy. I research it properly, write it clearly, and proofread it before you ever see it.</p>
+        <h3>Content Writing &amp; Editing</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <p>I dig into a topic, check the sources, and hand you clean, organized information you can actually use.</p>
+        <h3>Online Research &amp; Data Entry</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <p>I track tasks in Trello or Notion, chase deadlines, and keep you updated so projects keep moving.</p>
+        <h3>Project &amp; Task Coordination</h3>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <p>Warm, professional replies to your clients and partners, whatever the time zone.</p>
+        <h3>Client Communication &amp; Support</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS & TOOLS -->
+<section id="skills" class="section">
+  <div class="side-grid">
+    <div>
+      <div class="eyebrow">Skills &amp; Tools</div>
+      <h2>What I'm good at</h2>
+    </div>
+    <div class="skills-col">
+      <div>
+        <div class="skills-label">Core strengths</div>
+        <div class="chips">
+          <span class="chip">Executive support</span>
+          <span class="chip">Remote office management</span>
+          <span class="chip">Scheduling &amp; coordination</span>
+          <span class="chip">Report writing</span>
+          <span class="chip">Business correspondence</span>
+          <span class="chip">Customer support</span>
+          <span class="chip">File organization</span>
+          <span class="chip">Proofreading &amp; editing</span>
+          <span class="chip">Time management</span>
+          <span class="chip">Confidentiality</span>
+          <span class="chip">Independent work</span>
+          <span class="chip">Team collaboration</span>
+        </div>
+      </div>
+      <div>
+        <div class="skills-label">Tools I work in</div>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-name">Google Workspace</div>
+            <div class="tool-detail">Docs, Sheets, Gmail, Drive, Calendar</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-name">Microsoft Office</div>
+            <div class="tool-detail">Word, Excel, PowerPoint</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-name">Trello &amp; Notion</div>
+            <div class="tool-detail">Task tracking &amp; project management</div>
+          </div>
+          <div class="tool-card">
+            <div class="tool-name">Zoom &amp; Google Meet</div>
+            <div class="tool-detail">Remote meetings &amp; communication</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="experience">
+  <div class="section">
+    <div class="experience-head">
+      <div class="eyebrow">Experience</div>
+      <h2>Where I've worked</h2>
+    </div>
+    <div class="jobs">
+      <div class="job">
+        <div>
+          <div class="job-period">2018 — Present</div>
+          <div class="job-mode">Remote · Freelance</div>
+        </div>
+        <div>
+          <h3>Freelance Content Writer &amp; Virtual Assistant</h3>
+          <div class="job-org">Independent — clients worldwide</div>
+          <p>I write news articles, blog posts, and research-based content for online platforms, usually with several assignments running at once. I do my own research, edit my own work, and keep clients in the loop. Most of my clients come back, which I take as the best feedback there is.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div>
+          <div class="job-period">May — Aug 2015</div>
+          <div class="job-mode">On-site · Nairobi</div>
+        </div>
+        <div>
+          <h3>Editorial &amp; Newsroom Assistant (Industrial Attachment)</h3>
+          <div class="job-org">Kenya News Agency</div>
+          <p>My first taste of a real newsroom. I helped with news writing, reporting, and editorial support, verified facts before they went to print, and pitched in on office admin and filing. Deadlines there were not a suggestion, and I learned to love that.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="education-head">
+    <div class="eyebrow">Education &amp; Training</div>
+    <h2>Where I studied</h2>
+  </div>
+  <div class="education-grid">
+    <div class="edu-card">
+      <div class="edu-year">ALX</div>
+      <h3>Virtual Assistant Program</h3>
+      <div class="edu-school">ALX (African Leadership X)</div>
+      <p>Where I learned the VA trade properly: inbox and calendar systems, task tracking, client handling, and the tools remote teams live in.</p>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2014 — 2018</div>
+      <h3>Diploma in Journalism &amp; Media Studies</h3>
+      <div class="edu-school">Consolata Institute of Communication Technology</div>
+      <p>News writing and reporting, media ethics, and the research and editing habits I still use every day.</p>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2014 — 2018</div>
+      <h3>Diploma in International Business Communication</h3>
+      <div class="edu-school">Consolata Institute of Communication Technology</div>
+      <p>Business writing, international correspondence and etiquette. How to sound professional in any inbox, anywhere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REFEREES -->
+<section class="referees">
+  <div class="referees-inner">
+    <div class="side-grid">
+      <div>
+        <div class="eyebrow">References</div>
+        <h2>People who can vouch for me</h2>
+      </div>
+      <div class="referees-col">
+        <div class="referee-cards">
+          <div class="referee-card">
+            <div class="referee-name">Rose Wachira</div>
+            <div class="referee-role">Principal — Consolata Institute of Communication &amp; Technology</div>
+          </div>
+          <div class="referee-card">
+            <div class="referee-name">Steve Gacheru</div>
+            <div class="referee-role">Operations Manager — Kenya News Agency</div>
+          </div>
+        </div>
+        <p class="referees-note">Happy to share their contact details if you ask.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <div class="eyebrow">Contact</div>
+    <h2>Ready to hand off the busywork?</h2>
+    <p class="contact-lede">I'm taking on remote virtual assistant, executive assistant, and personal assistant work with clients anywhere in the world. Send me a message and I'll get back to you quickly.</p>
+    <div class="contact-ctas">
+      <a href="mailto:gloriaben59@gmail.com" class="contact-btn-solid">✉️ Email me</a>
+      <a href="https://wa.me/254701247093" target="_blank" rel="noopener" class="contact-btn-outline">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/gloria-wagura" target="_blank" rel="noopener" class="contact-btn-outline">LinkedIn</a>
+    </div>
+    <div class="footer">
+      <span>© 2026 Gloria Gathoni Wagura</span>
+      <span>Nairobi, Kenya · Working remotely, worldwide</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
